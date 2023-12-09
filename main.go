@@ -58,7 +58,11 @@ func main() {
 
 	// get the adjective
 	if theTime.Minute() < 30 {
-		theAdjective = ADJECTIVES[30]
+		if theTime.Minute() >= 0 && theTime.Minute() < 5 {
+			theAdjective = ""
+		} else {
+			theAdjective = ADJECTIVES[60]
+		}
 		theHour = HOURS[(theTime.Hour())]
 	} else {
 		theAdjective = ADJECTIVES[60]
